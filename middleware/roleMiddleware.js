@@ -1,7 +1,7 @@
 const roleMiddleware = (allowedRole) =>{
     return (req,res,next) =>{
         try {
-        if(req.user){
+        if(!req.user){
             return res.status(401).send({
                 message:"Not authorized, User not found"
             })
